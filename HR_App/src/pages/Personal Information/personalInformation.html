@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center">Human Resource Management System </ion-title>
+  </ion-navbar>
+  <div style="text-align: right">
+      Welcome:{{firstName}} &nbsp;&nbsp;&nbsp;
+      <button style="border-radius: 3px;background-color:#488aff;color: white;" (click) ="Logout()" >Log Out</button>
+  
+    </div>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div style="margin-top: 75px;text-align: center">
+    <fieldset fieldset style="width: 393px;margin: auto">
+      <legend style="text-align: left">
+        <h3>Personal Information</h3>
+      </legend>
+      <h4>Details</h4>
+      <label>All grey Fields are readonly</label><br>
+        <br>
+        <label>Name(s): </label>
+        <input type="text" [(ngModel)]="name" readonly="readonly" style="border-radius: 5px;margin-left: 60px;background-color: grey" />
+        <br>
+        <br>
+        <label>Surname: </label>
+        <input type="text" [(ngModel)]="surname" readonly="readonly" style="border-radius: 5px;margin-left: 62px;background-color: grey" />
+        <br>
+        <br>
+        <label>Date Of Birth: </label>
+        <input type="text" [(ngModel)]="dob" readonly="readonly" style="border-radius: 5px;margin-left: 31px;background-color: grey" />
+        <br>
+        <br>
+        <label>ID Number: </label>
+        <input type="text" [(ngModel)]="idNumber" readonly="readonly" style="border-radius: 5px;margin-left: 47px;background-color: grey" />
+        <br>
+        <br>
+        <label>Gender: </label>
+        <input type="text" [(ngModel)]="gender" readonly="readonly" style="border-radius: 5px;margin-left: 71px;background-color: grey" />
+        <br>
+        <br>
+        <label>Marital Status: </label>
+        <input type="text" [(ngModel)]="maritalStatus" readonly="readonly" style="border-radius: 5px;margin-left: 29px;background-color: grey" />
+        <br>
+        <br>
+        <label>Email: </label>
+        <input type="text" [(ngModel)]="email" readonly="readonly" style="border-radius: 5px;margin-left: 80px;background-color: grey" />
+        <br>
+        <br>
+        <label>Contact Number: </label>
+        <input type="text" [(ngModel)]="contactNumber" readonly="readonly" style="border-radius: 5px;margin-left: 12px;background-color: grey" />
+        <br>
+        <br>
+      <h4>Benefits/Allowances</h4>
+        <ul>
+          <li>Medical</li>
+          <li>House</li>
+          <li>Car</li>
+          <li>Petrol</li>
+        </ul>
+
+        <br>
+        <br>
+      <h4>Dependencies</h4>
+        <table style="text-align: center;margin:auto">
+          <tr>
+            <th>Names</th>
+            <th>Surname</th>
+            <th>DOB</th>
+            <th>ID Number</th>
+          </tr>
+          <tr>
+            <td>Mat</td>
+            <td>Lesh</td>
+            <td>1993-10-10</td>
+            <td>9310104567929</td>
+          </tr>
+        </table>
+     
+
+    </fieldset>
+  </div>
+
+</ion-content>

@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center">Human Resource Management System </ion-title>
+  </ion-navbar>
+  <div style="text-align: right">
+      Welcome:{{firstName}} &nbsp;&nbsp;&nbsp;
+      <button style="border-radius: 3px;background-color:#488aff;color: white;" (click) ="Logout()" >Log Out</button>
+  
+    </div>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div style="margin-top: 75px;text-align: center">
+    <fieldset fieldset style="width: 393px;margin: auto">
+      <legend style="text-align: left">
+        <h3>Leave Management</h3>
+      </legend>
+      <h4>Leave Balances</h4>
+      <label>All grey Fields are readonly</label><br>
+      <br>
+      <label>Available Days for Annual: </label>
+      <input type="text" [(ngModel)]="annualBalance" readonly="readonly" style="border-radius: 5px;width: 100px;background-color: grey" />
+      <br>
+      <br>
+      <label>Available Days for Family: </label>
+      <input type="text" [(ngModel)]="familyBalance" readonly="readonly" style="border-radius: 5px;width: 100px;background-color: grey" />
+      <br>
+      <br>
+      <label>Available Days for Sick: </label>
+      <input type="text" [(ngModel)]="sickBalance" readonly="readonly" style="border-radius: 5px;margin-left: 12px;width: 100px;background-color: grey"
+      />
+      <br>
+      <br>
+      <label>Available Days for Study: </label>
+      <input type="text" [(ngModel)]="studyBalance" readonly="readonly" style="border-radius: 5px;width: 100px;background-color: grey" />
+      <br>
+      <br>
+
+      <h4>Apply Leave</h4>
+      <label>All Fields with asterick (<label style="color: red">*</label>) are Compulsory </label><br>
+      <div *ngIf="balanceError" style="color: red; margin-left: 26px; height: 10px;">Requested Days are more than balance,Contact HR </div>
+      <br>
+      <label>Type of Leave: </label><label style="color: red">*</label>
+      <select type="select" [(ngModel)]="leaveType" (focus)="selectFocus()" style="border-radius: 5px;width:160px; margin-left: 13px;">
+          <option value="">Select Leave Type</option>
+          <option value="Annual">Annual</option>
+          <option value="Family">Family</option>
+          <option value="Sick">Sick</option>
+          <option value="Study">Study</option>
+      </select>
+      <div *ngIf="typeOfLeaveError" style="color: red; margin-left: 58px; height: 0px;">Select Leave Type </div>
+      <br>
+      <br>
+      <label>Date From: </label><label style="color: red">*</label>
+      <input type="date" [(ngModel)]="dateFrom" (focus)="dateFromFocus()" style="border-radius: 5px; width: 160px;margin-left: 36px;" />
+      <div *ngIf="dateFromError" style="color: red; margin-left: 53px; height: 0px;">Select Date From </div>
+
+      <br>
+      <br>
+      <label>Date To: </label><label style="color: red">*</label>
+      <input type="date" [(ngModel)]="dateTo" (focus)="dateToFocus()" style="border-radius: 5px;width: 160px;margin-left: 57px;"/>
+      <div *ngIf="dateToError" style="color: red; margin-left: 47px; height: 0px;">Select Date To </div>
+      <div *ngIf="datesError" style="color: red; height: 0px;">Date To must be more than Date From </div>
+
+      <br>
+      <br>
+      <label>Number of Days: </label>
+      <input type="text" [(ngModel)]="numberOfDays" readonly="readonly" style="border-radius: 5px;width: 160px; margin-left: 4px;background-color: grey"/>
+
+      <br>
+      <div *ngIf="successfullyApplied" style="color:green; margin-left: 0px; height: 0px;">Successfully Applied </div>
+
+      <br>
+
+      <button (click)="applyLeave()" style="border-radius: 5px;height: 30px;  width: 75px;">Apply</button>
+      <button type="reset" style="border-radius: 5px;height: 30px;  width: 75px;margin-left: 30px;">Clear</button>
+
+    </fieldset>
+  </div>
+
+</ion-content>

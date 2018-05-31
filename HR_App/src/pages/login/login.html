@@ -1,0 +1,46 @@
+<ion-content padding style="text-align: center;">
+
+    <fieldset style="background-color: aquamarine;height:70px;border-style:solid;">
+        <h2 style="margin-top: 10px;">
+            Human Resource Management System
+        </h2>
+    </fieldset>
+
+    <div padding style="margin-top: 75px; text-align: center;">
+
+        <fieldset style="width: 350px;margin: auto;">
+            <legend style="text-align: left">
+                <h3>Login</h3>
+            </legend>
+            <label>Employee Number:</label>
+            <input type="text" placeholder="Employee Number" (focus)="numFocus()" required style="border-radius: 5px" [(ngModel)]="employeeID" />
+            <div *ngIf="numberError" style="color: red; margin-left: 106px; height: 0px;">Enter Employee Number </div>
+            <br>
+            <br>
+
+            <label>Password:</label>
+            <input type="text" placeholder="Password" (focus)="passFocus()" required style=" margin-left: 51px; border-radius: 5px" [(ngModel)]="Password" />
+            <div *ngIf="passwordError" style="color: red; margin-left: 52px; height: 0px;">Enter Password </div>
+            <br>
+            <div *ngIf="wrongUsernameOrPass" style="color: red; height: 0px;">Wrong username or Password </div>
+            <br>
+            <br>
+            <button (click)="LoginClick()" style="border-radius: 5px;height: 30px;  width: 75px;margin-left: 30px;">Login</button>
+        </fieldset>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <div style="text-align: center">
+            <a href="#" style="text-decoration: none;color: black">Developers</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" style="text-decoration: none;color: black">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" style="text-decoration: none;color: black">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" style="text-decoration: none;color: black">How it works?</a>
+            <br>
+            <br> 
+            CopyRight-2018
+        </div>
+    </footer>
+</ion-content>

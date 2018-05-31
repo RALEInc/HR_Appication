@@ -1,0 +1,77 @@
+<ion-header>
+        <ion-navbar>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title style="text-align: center">Human Resource Management System </ion-title>
+        </ion-navbar>
+        <div style="text-align: right">
+            Welcome:{{firstName}} &nbsp;&nbsp;&nbsp;
+            <button style="border-radius: 3px;background-color:#488aff;color: white;" (click) ="Logout()" >Log Out</button>
+        
+          </div>
+      </ion-header>
+      
+      <ion-content padding>
+      
+      
+        <div style="margin-top: 75px;text-align: center">
+          <fieldset fieldset style="width: 393px;margin: auto">
+            <legend style="text-align: left">
+              <h3>Manage Address</h3>
+            </legend>
+            <h4>Address</h4>
+            <label>All Fields with asterick (<label style="color: red">*</label>) are Compulsory </label><br>
+            <br>
+            <label>Street Address: </label><label style="color: red;">*</label>
+            <input type="text" placeholder="123 William Nicol" (focus) ="streetFocus()" [(ngModel)]="streetNumber"  style="border-radius: 5px;width: 160px;" />
+            <div *ngIf="streetError" style="color: red; margin-left: 84px; height: 0px;">street add is required </div>
+
+            <br>
+            <br>
+            <label>Suburb: </label><label style="color: red;">*</label>
+            <input type="text" [(ngModel)]="suburb" (focus) ="suburbFocus()" placeholder="Fourways"  style="border-radius: 5px;width: 160px;margin-left: 49px;" />
+            <div *ngIf="suburbError" style="color: red; margin-left: 67px; height: 0px;">Suburb is required </div>
+
+            <br>
+            <br>
+            <label>City: </label>
+            <input type="text" [(ngModel)]="city" placeholder="Jhb"  style="border-radius: 5px;margin-left: 78px;width: 160px;"
+            />
+            <br>
+            <br>
+            <label>Postal Code: </label><label style="color: red;">*</label>
+            <input type="text" [(ngModel)]="postalCode" (focus) ="codeFocus()" placeholder="1111"  style="border-radius: 5px;width: 160px;margin-left: 16px;" />
+            <div *ngIf="codeError" style="color: red; margin-left: 54px; height: 0px;">Code is required </div>
+
+            <br>
+            <br>
+            <label>Province: </label>
+            <select type="select" [(ngModel)]="province"  style="border-radius: 5px;width: 160px; margin-left: 47px;" >
+                <option>Gauteng</option>
+                <option>Limpopo</option>
+                <option>Mpumalanga</option>
+                <option>Free State</option>
+                <option>North West</option>
+                <option>Eastern Cape</option>
+                <option>Nothern Cape</option>
+                <option>Kwa-zulu Natal</option>
+                <option>Western Cape</option>
+            </select>
+            <br>
+            <br>
+            <label>Country: </label> <label style="color: red;">*</label>
+            <input type="text" [(ngModel)]="country" (focus) ="countryFocus()" placeholder="SA"  style="border-radius: 5px;width: 160px;margin-left: 42px;" /> 
+            <div *ngIf="countryError" style="color: red; margin-left: 67px; height: 0px;">Country is required </div>
+    
+            <br>
+            <div *ngIf="successChange" style="color:green; margin-left: 0px; height: 10px;">Successfully Updated </div>
+            <br>
+      
+            <button (click)="updateAddress()" style="border-radius: 5px;height: 30px;  width: 130px;">Update Address</button>
+            <button type="reset" style="border-radius: 5px;height: 30px;  width: 75px;margin-left: 30px;">Clear</button>
+      
+          </fieldset>
+        </div>
+      
+      </ion-content>
